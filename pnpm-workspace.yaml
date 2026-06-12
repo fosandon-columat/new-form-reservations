@@ -1,0 +1,6 @@
+# Ajustes de pnpm (v11). En pnpm 11 los permisos de build de dependencias se
+# configuran aquí con `allowBuilds` (sustituye a onlyBuiltDependencies y al
+# campo "pnpm" de package.json, ya deprecados).
+allowBuilds:
+  sharp: true                 # optimización de imágenes de Next.js (binario nativo)
+  "@tailwindcss/oxide": true  # motor nativo de Tailwind CSS v4

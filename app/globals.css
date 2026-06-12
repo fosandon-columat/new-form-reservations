@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+/* ── Design tokens (Tailwind v4 @theme) ──
+   Paleta del formulario público de reserva de Columat. */
+@theme {
+  --color-navy: #001c54;
+  --color-accent: #0045ce;
+  --color-cyan: #56f6f4;
+  --color-sky: #90dbff;
+  --color-ink: #1a2340;
+  --color-slate: #4c6993;
+  --color-muted: #9ba3b5;
+  --color-line: #e8eaf0;
+  --color-line-soft: #f0f2f8;
+  --color-field: #e0e4ef;
+  --color-page: #f4f6fa;
+  --color-success: #1a9e5e;
+  --color-danger: #c0392b;
+
+  /* La fuente se inyecta vía next/font como variable CSS (--font-inter). */
+  --font-sans: var(--font-inter), "Helvetica Neue", ui-sans-serif, system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--color-page);
+  color: var(--color-ink);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
