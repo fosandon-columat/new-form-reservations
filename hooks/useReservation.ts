@@ -3,7 +3,7 @@ import { startOfToday } from '@/lib/date'
 import type { Mode, ReservationState, Step, TimeField } from '@/lib/types'
 
 const initialState: ReservationState = {
-  mode: 'orders',
+  mode: 'storage',
   step: 1,
   year: 2026,
   month: 5, // Junio (0-indexado)

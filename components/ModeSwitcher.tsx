@@ -2,7 +2,7 @@ import { IconPackage, IconArchive } from '@tabler/icons-react'
 import type { Mode } from '@/lib/types'
 
 const options = [
-  // { id: 'orders', label: 'Orders', Icon: IconPackage },
+  // { id: 'orders', label: 'Reserva de pedidos', Icon: IconPackage },
   { id: 'storage', label: 'Reserva de almacenamiento', Icon: IconArchive },
 ] as const
 
