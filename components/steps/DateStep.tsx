@@ -75,7 +75,7 @@ function DateChip({ label, value, active }: { label: string; value: string; acti
         {label}
       </div>
       <div className={`text-[14px] ${value ? 'font-bold text-navy' : 'font-normal text-[#c0c8d8]'}`}>
-        {value || 'Elige fecha'}
+        {value || 'Choose date'}
       </div>
     </div>
   )
@@ -93,16 +93,16 @@ export default function DateStep({ res }: { res: ReservationController }) {
     <div>
       <div className="mb-[14px] flex items-center gap-2 text-[13px] font-bold uppercase tracking-[0.5px] text-navy">
         <IconCalendarEvent size={16} className="text-accent" aria-hidden="true" />
-        {isStorage ? 'Período de reserva' : 'Día de recogida'}
+        {isStorage ? 'Reservation period' : 'Pickup day'}
       </div>
 
       {isStorage && (
         <div>
           <div className="mb-[14px] grid grid-cols-[1fr_auto_1fr] items-center gap-[10px]">
-            <DateChip label="Fecha inicio" value={start ? formatDate(start) : ''} active={pickingEnd} />
+            <DateChip label="Start date" value={start ? formatDate(start) : ''} active={pickingEnd} />
             <div className="text-center text-[18px] text-muted">→</div>
             <DateChip
-              label="Fecha fin"
+              label="End date"
               value={end ? formatDate(end) : ''}
               active={!pickingEnd && !!end}
             />
@@ -111,7 +111,7 @@ export default function DateStep({ res }: { res: ReservationController }) {
             <div className="mb-[14px]">
               <span className="inline-flex items-center gap-1 rounded-full border border-[#c8d5f5] bg-[#f0f4ff] px-3 py-1 text-[12px] font-semibold text-accent">
                 <IconClock size={11} aria-hidden="true" />
-                {durationDays} día{durationDays !== 1 ? 's' : ''} de almacenamiento
+                {durationDays} day{durationDays !== 1 ? 's' : ''} of storage
               </span>
             </div>
           )}
@@ -134,7 +134,7 @@ export default function DateStep({ res }: { res: ReservationController }) {
       {showTimes && (
         <div className="mt-[14px] flex gap-3">
           <TimeBlock
-            label="Hora de inicio"
+            label="Start time"
             Icon={IconClock}
             h={state.startH}
             m={state.startM}
@@ -142,7 +142,7 @@ export default function DateStep({ res }: { res: ReservationController }) {
             onM={(v) => setTime('startM', v)}
           />
           <TimeBlock
-            label="Hora de fin"
+            label="End time"
             Icon={IconClockCheck}
             h={state.endH}
             m={state.endM}
@@ -158,7 +158,7 @@ export default function DateStep({ res }: { res: ReservationController }) {
           onClick={() => goStep(2)}
           className="flex items-center gap-2 rounded-[10px] bg-navy px-7 py-[13px] text-[14px] font-bold text-white hover:bg-accent"
         >
-          Continuar <IconArrowRight size={16} aria-hidden="true" />
+          Continue <IconArrowRight size={16} aria-hidden="true" />
         </button>
       </div>
     </div>
