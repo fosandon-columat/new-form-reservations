@@ -1,7 +1,7 @@
 import { IconCheck } from '@tabler/icons-react'
 import type { Step } from '@/lib/types'
 
-const steps = ['Fecha', 'Compartimento', 'Datos'] as const
+const steps = ['Date', 'Compartment', 'Details'] as const
 
 type DotState = 'done' | 'active' | 'pending'
 

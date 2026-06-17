@@ -12,12 +12,12 @@ interface FieldDef {
 }
 
 const fields: FieldDef[] = [
-  { label: 'Nombre', required: true, type: 'text', placeholder: 'Nombre' },
-  { label: 'Apellidos', required: true, type: 'text', placeholder: 'Apellidos' },
-  { label: 'DNI / Documento', required: true, type: 'text', placeholder: '00000000A' },
-  { label: 'Historia clínica', required: false, type: 'text', placeholder: 'Nº de historia clínica' },
-  { label: 'Email', required: true, type: 'email', placeholder: 'correo@ejemplo.com' },
-  { label: 'Teléfono', required: false, type: 'tel', placeholder: '+34 600 000 000' },
+  { label: 'First name', required: true, type: 'text', placeholder: 'First name' },
+  { label: 'Last name', required: true, type: 'text', placeholder: 'Last name' },
+  { label: 'ID / Document', required: true, type: 'text', placeholder: '00000000A' },
+  { label: 'Medical record', required: false, type: 'text', placeholder: 'Medical record no.' },
+  { label: 'Email', required: true, type: 'email', placeholder: 'name@example.com' },
+  { label: 'Phone', required: false, type: 'tel', placeholder: '+34 600 000 000' },
 ]
 
 export default function DataStep({ res }: { res: ReservationController }) {
@@ -28,14 +28,14 @@ export default function DataStep({ res }: { res: ReservationController }) {
       <div className="mb-4 flex items-start gap-2 rounded-[9px] border border-[#c8d5f5] bg-[#EEF3FF] px-[14px] py-[11px] text-[12px] text-slate">
         <IconInfoCircle size={15} className="mt-px flex-shrink-0 text-accent" aria-hidden="true" />
         <span>
-          Rellena los datos del solicitante. Los campos con{' '}
-          <strong className="text-danger">*</strong> son obligatorios.
+          Fill in the applicant&apos;s details. Fields marked with{' '}
+          <strong className="text-danger">*</strong> are required.
         </span>
       </div>
 
       <div className="mb-[14px] flex items-center gap-2 text-[13px] font-bold uppercase tracking-[0.5px] text-navy">
         <IconUser size={16} className="text-accent" aria-hidden="true" />
-        Datos del solicitante
+        Applicant details
       </div>
 
       <div className="grid grid-cols-2 gap-[14px]">
@@ -49,10 +49,10 @@ export default function DataStep({ res }: { res: ReservationController }) {
           </div>
         ))}
         <div className="col-span-2 flex flex-col gap-[5px]">
-          <label className="text-[12px] font-semibold text-slate">Observaciones</label>
+          <label className="text-[12px] font-semibold text-slate">Notes</label>
           <textarea
             className={`${inputClass} min-h-[72px] resize-y`}
-            placeholder="Cualquier indicación adicional..."
+            placeholder="Any additional notes..."
           />
         </div>
       </div>
@@ -62,13 +62,13 @@ export default function DataStep({ res }: { res: ReservationController }) {
           onClick={() => goStep(2)}
           className="flex items-center gap-1 rounded-[10px] border-[1.5px] border-field bg-transparent px-5 py-[11px] text-[13px] font-medium text-slate hover:bg-[#f5f7ff]"
         >
-          <IconArrowLeft size={13} aria-hidden="true" /> Volver
+          <IconArrowLeft size={13} aria-hidden="true" /> Back
         </button>
         <button
           onClick={() => goStep(4)}
           className="flex items-center gap-2 rounded-[10px] bg-success px-7 py-[13px] text-[14px] font-bold text-white hover:brightness-110"
         >
-          <IconSend size={16} aria-hidden="true" /> Confirmar reserva
+          <IconSend size={16} aria-hidden="true" /> Confirm reservation
         </button>
       </div>
     </div>

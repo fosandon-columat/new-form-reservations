@@ -11,18 +11,18 @@ export default function CompartmentStep({ res }: { res: ReservationController })
   if (mode === 'orders' && start) {
     banner = (
       <>
-        Recogida el <strong className="font-bold text-navy">{formatDate(start)}</strong>
+        Pickup on <strong className="font-bold text-navy">{formatDate(start)}</strong>
       </>
     )
   } else if (mode === 'storage' && start && end) {
     banner = (
       <>
-        Almacenamiento del <strong className="font-bold text-navy">{formatDate(start)}</strong> al{' '}
+        Storage from <strong className="font-bold text-navy">{formatDate(start)}</strong> to{' '}
         <strong className="font-bold text-navy">{formatDate(end)}</strong>
       </>
     )
   } else {
-    banner = 'Fecha seleccionada'
+    banner = 'Selected date'
   }
 
   return (
@@ -34,7 +34,7 @@ export default function CompartmentStep({ res }: { res: ReservationController })
 
       <div className="mb-[14px] flex items-center gap-2 text-[13px] font-bold uppercase tracking-[0.5px] text-navy">
         <IconBox size={16} className="text-accent" aria-hidden="true" />
-        Selecciona un compartimento
+        Select a compartment
       </div>
 
       <div className="grid grid-cols-3 gap-[10px]">
@@ -54,7 +54,7 @@ export default function CompartmentStep({ res }: { res: ReservationController })
             >
               {!c.available && (
                 <span className="absolute right-2 top-[6px] rounded-[10px] bg-[#fde8e8] px-[6px] py-0.5 text-[9px] font-bold text-danger">
-                  Sin disponibilidad
+                  Unavailable
                 </span>
               )}
               <div
@@ -84,13 +84,13 @@ export default function CompartmentStep({ res }: { res: ReservationController })
           onClick={() => goStep(1)}
           className="flex items-center gap-1 rounded-[10px] border-[1.5px] border-field bg-transparent px-5 py-[11px] text-[13px] font-medium text-slate hover:bg-[#f5f7ff]"
         >
-          <IconArrowLeft size={13} aria-hidden="true" /> Volver
+          <IconArrowLeft size={13} aria-hidden="true" /> Back
         </button>
         <button
           onClick={() => goStep(3)}
           className="flex items-center gap-2 rounded-[10px] bg-navy px-7 py-[13px] text-[14px] font-bold text-white hover:bg-accent"
         >
-          Continuar <IconArrowRight size={16} aria-hidden="true" />
+          Continue <IconArrowRight size={16} aria-hidden="true" />
         </button>
       </div>
     </div>

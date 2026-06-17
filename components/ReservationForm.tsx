@@ -23,15 +23,15 @@ export default function ReservationForm() {
   const res = useReservation()
   const { mode, step } = res.state
 
-    const title = mode === 'orders' ? 'Solicitud de pedido' : 'Reserva de almacenamiento'
+    const title = mode === 'orders' ? 'Order request' : 'Storage reservation'
     const subtitle =
       mode === 'orders'
-        ? 'Selecciona el día de recogida y los datos de tu reserva'
-        : 'Elige el período de almacenamiento y tus datos'
+        ? 'Select the pickup day and your reservation details'
+        : 'Choose the storage period and your details'
 
     return (
     <>
-      <h2 className="sr-only">Formulario de reservas de usuario — Orders y Storage</h2>
+      <h2 className="sr-only">User reservation form — Orders and Storage</h2>
 
       <ModeSwitcher mode={mode} onChange={res.setMode} />
 
@@ -45,7 +45,7 @@ export default function ReservationForm() {
               </div>
               <div>
                 <div className="text-[15px] font-bold text-white">Hospital del Hierro</div>
-                <div className="text-[11px] text-sky">Sistema de reserva de taquillas</div>
+                <div className="text-[11px] text-sky">Locker reservation system</div>
               </div>
             </div>
             <div className="text-[22px] font-bold tracking-[-0.3px] text-white">{title}</div>

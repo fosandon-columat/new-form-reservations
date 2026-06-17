@@ -11,15 +11,15 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Columat · Reserva de taquillas',
-  description: 'Formulario público de reserva de taquillas — Orders y Storage',
+  title: 'Columat · Locker reservation',
+  description: 'Public locker reservation form — Orders and Storage',
 }
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="es" className={inter.variable}>
+    <html lang="en" className={inter.variable}>
       <body>{children}</body>
     </html>
   )
